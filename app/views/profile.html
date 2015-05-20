@@ -1,0 +1,30 @@
+
+<div ng-controller="profileController" layout="column" flex layout-fill>
+  <md-content flex >
+    <div layout="row" layout-align="space-between center">
+      <div>
+        Completed: 5 {{}}
+      </div>
+      <div>
+        Joined: 12 {{}}
+      </div>
+    </div>
+  </md-content>
+  <md-content >
+    <div class="profile">
+      <div class="bg" ng-style="profileHero"><img ng-src="http://www.gravatar.com/avatar/1000" alt="Description" /></div>
+    </div>
+  </md-content>
+  <md-content>
+    <div class="slick">
+      <slick dots='true' infinite='true' speed='300' slides-to-show='3' touch-move='true' slides-to-scroll='1'>
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+        <div><h3>5</h3></div>
+        <div><h3>6</h3></div>
+      </slick>
+    </div>
+  </md-content>
+</div>

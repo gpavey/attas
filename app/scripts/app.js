@@ -17,22 +17,23 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ngMaterial'
+    'ngMaterial',
+    'slick'
   ])
-  .controller('AppCtrl', function($scope) {
+  .controller('AppCtrl', function() {
   })
 
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/profile');
     $stateProvider
-      .state('home', {
-        url         : '/home',
-        templateUrl : '../views/home.html',
-        controller  : 'homeController'
-      })
-      .state('mcf', {
-        url           : '/mcf',
-        templateUrl   : '../views/mcf.html',
-        controller    : 'ProjectController'
+      // .state('home', {
+      //   url         : '/home',
+      //   templateUrl : '../views/home.html',
+      //   controller  : 'homeController'
+      // })
+      .state('profile', {
+        url           : '/profile',
+        templateUrl   : '../views/profile.html',
+        controller    : 'profileController'
       });
   });

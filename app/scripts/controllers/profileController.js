@@ -8,10 +8,8 @@
  * Controller of the attasApp
  */
 angular.module('attasApp')
-  .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('profileController', function ($scope) {
+        $scope.profileHero = {
+        background: 'url(images/background.jpg)'
+    };
   });
