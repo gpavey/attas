@@ -25,8 +25,8 @@
       </slick>
     </div>
 
-    <div ng-controller="tabsController" >
-        <md-tabs class="md-accent" md-selected="data.selectedIndex" md-align-tabs="top" md-dynamic-height flex>
+    <div ng-controller="tabsController" layout="column" flex>
+        <md-tabs class="md-accent" md-selected="data.selectedIndex" md-align-tabs="top" layout="column" flex>
           <md-tab id="tab1">
             <md-tab-label>Attas</md-tab-label>
               <md-tab-body >
@@ -50,9 +50,11 @@
             </md-tab-body>
           </md-tab>
         </md-tabs>
-        <md-button id="mdAdd" class="md-fab md-raised md-primary" ng-click="showDialog($event)">
-                    Test<md-icon icon="bower_components/material-design-icons/content/svg/production/ic_add_24px.svg" style="width: 24px; height: 24px; fill:white"></md-icon>
-        </md-button>
+
+        
+        <nav mfb-menu position="br" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
+           <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
+        </nav>
     </div>
     
   </div>

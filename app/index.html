@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="bower_components/ng-mfb/mfb/dist/mfb.css" />
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -26,22 +28,32 @@
     <div ng-controller="AppCtrl" layout="column">  
       <section layout="row" flex="">
         
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
           <md-toolbar class="md-theme-indigo">
             <h1 class="md-toolbar-tools">Sidenav Left</h1>
           </md-toolbar>
           <md-content ng-controller="LeftCtrl" layout-padding>
-            <md-button ng-click="close()" class="md-primary">
+            <md-button ng-click="close()" class="md-primary" hide-gt-md="">
               Close Sidenav Left
             </md-button>
           </md-content>
         </md-sidenav>
+         <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+          <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Sidenav Right</h1>
+          </md-toolbar>
+          <md-content ng-controller="RightCtrl" layout-padding>
+            <md-button ng-click="close()" class="md-primary">
+              Close Sidenav Right
+            </md-button>
+          </md-content>
+        </md-sidenav>
         
-        <md-content flex layout-padding>
+        <md-content flex >
           <div layout="column" layout-fill>
             <md-toolbar>
               <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()" hide-gt-md="">
                   <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg"></md-icon>
                 </md-button>
                 <h2>
@@ -67,16 +79,7 @@
 <!--          <div flex></div>-->
         </md-content>
                 
-       <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
-        <md-toolbar class="md-theme-indigo">
-          <h1 class="md-toolbar-tools">Sidenav Right</h1>
-        </md-toolbar>
-        <md-content ng-controller="RightCtrl" layout-padding>
-          <md-button ng-click="close()" class="md-primary">
-            Close Sidenav Right
-          </md-button>
-        </md-content>
-      </md-sidenav>
+
     </section>
  </div>
       
@@ -117,12 +120,16 @@
     <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
     <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
     <script src="bower_components/angular-slick/dist/slick.js"></script>
+    <script src="bower_components/ng-mfb/src/mfb-directive.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/profileController.js"></script>
+        <script src="scripts/controllers/inviteController.js"></script>
+        <script src="scripts/controllers/completeController.js"></script>
+        <script src="scripts/controllers/createController.js"></script>
         <!-- endbuild -->
 </body>
 </html>

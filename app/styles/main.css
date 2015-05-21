@@ -10,6 +10,15 @@ body {
 .md-toolbar md-icon.md-default-theme {
   color: white;
 }
+md-tabs-content-wrapper,
+md-tabs:not(.md-no-tab-content):not([md-dynamic-height]) {
+  min-height: 300px;
+}
+
+.md-sidenav-right {
+  height: 300px;
+}
+
 
 .profile {
   width: 100vw;
