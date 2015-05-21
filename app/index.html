@@ -23,40 +23,65 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-<div ng-controller="AppCtrl">
-  <md-content>
-    <md-toolbar md-scroll-shrink>
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings">
-          <md-tooltip>
-            Open Menu
-          </md-tooltip>
-          <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg"></md-icon>
-        </md-button>
-        <h2>
-          <span>ATTA</span>
-        </h2>
-        <span flex></span>
-        <md-button class="md-icon-button" aria-label="notifications">
-          <md-tooltip>
-            Check Notifications
-          </md-tooltip>
-          <md-icon md-svg-src="bower_components/material-design-icons/communication/svg/design/ic_messenger_outline_24px.svg"></md-icon>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="My Stuff">
-        <md-tooltip>
-          My Stuff
-        </md-tooltip>
-          <md-icon md-svg-src="bower_components/material-design-icons/action/svg/design/ic_account_circle_24px.svg"></md-icon>
-        </md-button>
-      </div>
-    </md-toolbar>
-
-  </md-content>
-
-  <md-content>
-      <div ui-view></div>
-  </md-content>
+    <div ng-controller="AppCtrl" layout="column">  
+      <section layout="row" flex="">
+        
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+          <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+          </md-toolbar>
+          <md-content ng-controller="LeftCtrl" layout-padding>
+            <md-button ng-click="close()" class="md-primary">
+              Close Sidenav Left
+            </md-button>
+          </md-content>
+        </md-sidenav>
+        
+        <md-content flex layout-padding>
+          <div layout="column" layout-fill>
+            <md-toolbar>
+              <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()">
+                  <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg"></md-icon>
+                </md-button>
+                <h2>
+                  <span>Attas</span>
+                </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="notifications">
+                  <md-tooltip>
+                    Check Notifications
+                  </md-tooltip>
+                  <md-icon md-svg-src="bower_components/material-design-icons/communication/svg/design/ic_messenger_outline_24px.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="My Stuff" ng-click="toggleRight()">
+                <md-tooltip>
+                  My Stuff
+                </md-tooltip>
+                  <md-icon md-svg-src="bower_components/material-design-icons/action/svg/design/ic_account_circle_24px.svg"></md-icon>
+                </md-button>
+              </div>
+            </md-toolbar>
+          </div>
+          <div layout="column" ui-view></div>
+<!--          <div flex></div>-->
+        </md-content>
+                
+       <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+        <md-toolbar class="md-theme-indigo">
+          <h1 class="md-toolbar-tools">Sidenav Right</h1>
+        </md-toolbar>
+        <md-content ng-controller="RightCtrl" layout-padding>
+          <md-button ng-click="close()" class="md-primary">
+            Close Sidenav Right
+          </md-button>
+        </md-content>
+      </md-sidenav>
+    </section>
+ </div>
+      
+     
+    
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -98,6 +123,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/profileController.js"></script>
+        <script src="scripts/controllers/sidenavController.js"></script>
         <!-- endbuild -->
 </body>
 </html>
