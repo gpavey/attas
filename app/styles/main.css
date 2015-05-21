@@ -1,21 +1,65 @@
 /*http://google.github.io/material-design-icons/*/
 
 /* Space out content a bit */
+html {height:100%;}
 body {
-
+  margin: 0;
+  padding: 0;
 }
 
 .md-toolbar md-icon.md-default-theme {
-  color: white; }
-
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  color: white;
 }
+md-tabs-content-wrapper,
+md-tabs:not(.md-no-tab-content):not([md-dynamic-height]) {
+  min-height: 300px;
+}
+
+.md-sidenav-right {
+  height: 300px;
+}
+
+
+.profile {
+  width: 100vw;
+  height: 125px;
+  position: relative;
+}
+.profile .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: contain;
+}
+.profile img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.box{
+  height:80px;
+  width: 100px;
+  background-color: #eee;
+  border: 1px solid #fff;
+}
+#mdAdd {
+  position: fixed;
+  right: 2%;
+  bottom: 24px;
+}
+.slick-slider{
+  margin-bottom: 0;
+}
+.slick-prev {
+  left:0;
+}
+.slick-next {
+  right:0;
+}
+

@@ -9,6 +9,10 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
+    <link rel="stylesheet" href="bower_components/ng-mfb/mfb/dist/mfb.css" />
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -21,49 +25,66 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-<div ng-controller="AppCtrl">
-  <md-content>
-    <md-toolbar md-scroll-shrink>
-      <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings">
-          <md-tooltip>
-            Open Menu
-          </md-tooltip>
-          <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg"></md-icon>
-        </md-button>
-        <h2>
-          <span>ATTA</span>
-        </h2>
-        <span flex></span>
-        <md-button class="md-icon-button" aria-label="notifications">
-          <md-tooltip>
-            Check Notifications
-          </md-tooltip>
-          <md-icon md-svg-src="bower_components/material-design-icons/communication/svg/design/ic_messenger_outline_24px.svg"></md-icon>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="My Stuff">
-        <md-tooltip>
-          My Stuff
-        </md-tooltip>
-          <md-icon md-svg-src="bower_components/material-design-icons/action/svg/design/ic_account_circle_24px.svg"></md-icon>
-        </md-button>
-      </div>
-    </md-toolbar>
-    <br>
-    </md-content>
+    <div ng-controller="AppCtrl" layout="column">  
+      <section layout="row" flex="">
+        
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+          <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+          </md-toolbar>
+          <md-content ng-controller="LeftCtrl" layout-padding>
+            <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+              Close Sidenav Left
+            </md-button>
+          </md-content>
+        </md-sidenav>
+         <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+          <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Sidenav Right</h1>
+          </md-toolbar>
+          <md-content ng-controller="RightCtrl" layout-padding>
+            <md-button ng-click="close()" class="md-primary">
+              Close Sidenav Right
+            </md-button>
+          </md-content>
+        </md-sidenav>
+        
+        <md-content flex >
+          <div layout="column" layout-fill>
+            <md-toolbar>
+              <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()" hide-gt-md="">
+                  <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg"></md-icon>
+                </md-button>
+                <h2>
+                  <span>Attas</span>
+                </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="notifications">
+                  <md-tooltip>
+                    Check Notifications
+                  </md-tooltip>
+                  <md-icon md-svg-src="bower_components/material-design-icons/communication/svg/design/ic_messenger_outline_24px.svg"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="My Stuff" ng-click="toggleRight()">
+                <md-tooltip>
+                  My Stuff
+                </md-tooltip>
+                  <md-icon md-svg-src="bower_components/material-design-icons/action/svg/design/ic_account_circle_24px.svg"></md-icon>
+                </md-button>
+              </div>
+            </md-toolbar>
+          </div>
+          <div layout="column" ui-view></div>
+<!--          <div flex></div>-->
+        </md-content>
+                
 
-    <md-content flex class='md-padding'>
-      <md-card ng-repeat = "card in cards">
-        {{card.title}}
-        {{card.text}}
-      </md-card>
-    </md-content>
-
-      <div ng-view=""></div>
-
-      <div class="footer">
-      </div>
-    </div>
+    </section>
+ </div>
+      
+     
+    
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -86,6 +107,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -96,12 +118,18 @@
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script src="bower_components/angular-slick/dist/slick.js"></script>
+    <script src="bower_components/ng-mfb/src/mfb-directive.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/profileController.js"></script>
+        <script src="scripts/controllers/inviteController.js"></script>
+        <script src="scripts/controllers/completeController.js"></script>
+        <script src="scripts/controllers/createController.js"></script>
         <!-- endbuild -->
 </body>
 </html>
