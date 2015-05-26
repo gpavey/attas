@@ -10,9 +10,12 @@ body {
 .md-toolbar md-icon.md-default-theme {
   color: white;
 }
-md-tabs-content-wrapper,
+/*md-tabs-content-wrapper,
 md-tabs:not(.md-no-tab-content):not([md-dynamic-height]) {
   min-height: 300px;
+}*/
+md-tab-content {
+  overflow: auto;
 }
 
 .md-sidenav-right {

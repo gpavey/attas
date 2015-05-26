@@ -1,7 +1,7 @@
 
 
 
-  <div ng-controller="profileController">
+  <div ng-controller="profileController" layout="column">
     <div layout="row" layout-align="space-between center">
       <div>
         Completed: 5 {{}}
@@ -25,12 +25,15 @@
       </slick>
     </div>
 
-    <div ng-controller="tabsController" layout="column" flex>
-        <md-tabs class="md-accent" md-selected="data.selectedIndex" md-align-tabs="top" layout="column" flex>
-          <md-tab id="tab1">
-            <md-tab-label>Attas</md-tab-label>
-              <md-tab-body >
-                <div ng-controller="incompleteAttaController" >
+    <div ng-controller="tabsController"  layout="column">
+      <div flex class="md-whiteframe-z1" layout-margin layout="column">
+        <md-tabs class="md-accent" style="margin: 0" flex >
+          <md-tab>
+            <md-tab-label>
+              Tab 1
+            </md-tab-label>
+              <md-tab-body>
+                 <div ng-controller="incompleteAttaController" layout="column" layout-fill>
                   <md-list>
                     <md-list-item class="md-2-line" ng-repeat="message in messages">
                       <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
@@ -41,20 +44,21 @@
                   </md-list>
                 </div>
               </md-tab-body>
+
           </md-tab>
-          <md-tab id="tab2">
-            <md-tab-label>Karma</md-tab-label>
+          <md-tab>
+          <md-tab-label>Tab 2</md-tab-label>
             <md-tab-body>
               View for Completed ATTAs <br/>
               data.selectedIndex = 1;
             </md-tab-body>
           </md-tab>
         </md-tabs>
+      </div>
 
-        
-        <nav mfb-menu position="br" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
+        <nav mfb-menu position="br" effect="zoomin" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
            <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
         </nav>
     </div>
-    
+
   </div>

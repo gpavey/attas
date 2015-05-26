@@ -28,7 +28,7 @@ angular.module('attasApp')
   })
 
   .controller('incompleteAttaController', function($scope){
-    var imagePath = 'https://material.angularjs.org/img/list/60.jpeg';
+    var imagePath = '';
     $scope.messages = [
       {
         face : imagePath,
