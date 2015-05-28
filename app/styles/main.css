@@ -5,14 +5,19 @@ html {height:100%;}
 body {
   margin: 0;
   padding: 0;
+  /*makes 1em equal to 10px*/
+  font-size:62.5%;
 }
 
 .md-toolbar md-icon.md-default-theme {
   color: white;
 }
-md-tabs-content-wrapper,
+/*md-tabs-content-wrapper,
 md-tabs:not(.md-no-tab-content):not([md-dynamic-height]) {
   min-height: 300px;
+}*/
+md-tab-content {
+  overflow: auto;
 }
 
 .md-sidenav-right {
@@ -48,11 +53,13 @@ md-tabs:not(.md-no-tab-content):not([md-dynamic-height]) {
   background-color: #eee;
   border: 1px solid #fff;
 }
+
 #mdAdd {
   position: fixed;
   right: 2%;
   bottom: 24px;
 }
+
 .slick-slider{
   margin-bottom: 0;
 }

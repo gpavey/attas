@@ -1,60 +1,65 @@
 
-
-
-  <div ng-controller="profileController">
-    <div layout="row" layout-align="space-between center">
-      <div>
-        Completed: 5 {{}}
-      </div>
-      <div>
-        Joined: 12 {{}}
-      </div>
+<div ng-controller="profileController" flex layout="column">
+  <div layout="row" layout-align="space-between center">
+    <div>
+      Completed: 5 {{}}
     </div>
-    <div class="profile">
-      <div class="bg" ng-style="profileHero"><img ng-src="http://www.gravatar.com/avatar/1000" alt="Description" /></div>
+    <div>
+      Joined: 12 {{}}
     </div>
+  </div>
+  <div class="profile">
+    <div class="bg" ng-style="profileHero"><img ng-src="http://www.gravatar.com/avatar/1000" alt="Description" /></div>
+  </div>
 
-    <div class="slick">
-      <slick infinite='true' speed='300' slides-to-show='3' touch-move='true' slides-to-scroll='1'>
-        <div class="box"><h3>Complete Atta 1</h3></div>
-        <div class="box"><h3>Complete Atta 2</h3></div>
-        <div class="box"><h3>Complete Atta 3</h3></div>
-        <div class="box"><h3>Complete Atta 4</h3></div>
-        <div class="box"><h3>Complete Atta 5</h3></div>
-        <div class="box"><h3>Complete Atta 6</h3></div>
-      </slick>
-    </div>
+  <div class="slick">
+    <slick infinite='true' speed='300' slides-to-show='3' touch-move='true' slides-to-scroll='1'>
+      <div class="box"><h3>Complete Atta 1</h3></div>
+      <div class="box"><h3>Complete Atta 2</h3></div>
+      <div class="box"><h3>Complete Atta 3</h3></div>
+      <div class="box"><h3>Complete Atta 4</h3></div>
+      <div class="box"><h3>Complete Atta 5</h3></div>
+      <div class="box"><h3>Complete Atta 6</h3></div>
+    </slick>
+  </div>
 
-    <div ng-controller="tabsController" layout="column" flex>
-        <md-tabs class="md-accent" md-selected="data.selectedIndex" md-align-tabs="top" layout="column" flex>
-          <md-tab id="tab1">
-            <md-tab-label>Attas</md-tab-label>
-              <md-tab-body >
-                <div ng-controller="incompleteAttaController" >
-                  <md-list>
-                    <md-list-item class="md-2-line" ng-repeat="message in messages">
+    <div flex  layout="column">
+      <md-tabs flex style="margin: 0">
+        <md-tab >
+            <md-tab-label>Tab 1</md-tab-label>
+            <md-tab-body>
+              <div ng-controller="incompleteAttaController" layout="column" layout-fill >
+                <md-content >
+                  <md-list >
+                    <md-list-item ng-repeat="message in messages" class="md-2-line md-whiteframe-z1" layout-margin>
                       <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
                       <div class="md-list-item-text">
                         <h3>{{message.what}}</h3>
                       </div>
                     </md-list-item>
                   </md-list>
-                </div>
-              </md-tab-body>
-          </md-tab>
-          <md-tab id="tab2">
-            <md-tab-label>Karma</md-tab-label>
-            <md-tab-body>
-              View for Completed ATTAs <br/>
-              data.selectedIndex = 1;
+                </md-content>
+              </div>
             </md-tab-body>
-          </md-tab>
-        </md-tabs>
-
-        
-        <nav mfb-menu position="br" effect="zoomin" label="hover here" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
-           <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
-        </nav>
+        </md-tab>
+        <md-tab>
+            <md-tab-label>
+              Tab 2
+            </md-tab-label>
+            <md-tab-body>
+              <div layout="column" layout-fill>
+                <md-content>
+                  <pre>View for Completed ATTAs <br/>
+              data.selectedIndex = 1;</pre>
+                </md-content>
+              </div>
+            </md-tab-body>
+        </md-tab>
+      </md-tabs>
     </div>
-    
+
   </div>
+  <nav mfb-menu position="br" effect="zoomin" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
+   <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
+  </nav>
+
