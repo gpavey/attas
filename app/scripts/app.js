@@ -24,27 +24,28 @@ angular
 
 
 
+
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/index2.html');
-    // $stateProvider
-      //  .state('invite', {
-      //    url         : '/invite',
-      //    templateUrl : '../views/invite.html',
-      //    controller  : 'inviteController'
-      //  })
-      //  .state('complete', {
-      //    url         : '/complete',
-      //    templateUrl : '../views/complete.html',
-      //    controller  : 'completeController'
-      //  })
-      //  .state('create', {
-      //    url         : '/create',
-      //    templateUrl : '../views/create.html',
-      //    controller  : 'createController'
-      //  })
-      // .state('profile', {
-      //   url           : '/profile',
-      //   templateUrl   : '../views/profile.html',
-      //   controller    : 'profileController'
-      // });
+    $urlRouterProvider.otherwise('/');
+    $stateProvider
+       .state('invite', {
+         url         : '/invite',
+         templateUrl : '../views/invite.html',
+         controller  : 'inviteController'
+       })
+       .state('complete', {
+         url         : '/complete',
+         templateUrl : '../views/complete.html',
+         controller  : 'completeController'
+       })
+       .state('create', {
+         url         : '/create',
+         templateUrl : '../views/create.html',
+         controller  : 'createController'
+       })
+      .state('profile', {
+        url           : '/profile',
+        templateUrl   : '../views/profile.html',
+        controller    : 'profileController'
+      });
   });

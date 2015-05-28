@@ -1,3 +1,6 @@
+/// <reference path="../../../typings/angularjs/angular.d.ts"/>
+'use strict';
+
 angular.module('attasApp')
 
   .controller('NavCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
@@ -45,4 +48,4 @@ angular.module('attasApp')
           $log.debug('close RIGHT is done');
         });
     };
-  })
+  });

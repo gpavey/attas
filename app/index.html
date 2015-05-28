@@ -1,34 +1,32 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="initial-scale=1" />
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
-    <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
-    <link rel="stylesheet" href="bower_components/ng-mfb/mfb/dist/mfb.css" />
-    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body ng-app="attasApp">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1" />
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
+  <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
+  <link rel="stylesheet" href="bower_components/ng-mfb/mfb/dist/mfb.css" />
+  <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="attasApp" layout="column">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+      <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div ng-controller="AppCtrl" layout-fill>
-      <section >
-
+      <!-- Add your site or application content here -->
+  <div ng-controller="NavCtrl" layout="column">
         <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
           <md-toolbar class="md-theme-indigo">
             <h1 class="md-toolbar-tools">Sidenav Left</h1>
@@ -39,7 +37,8 @@
             </md-button>
           </md-content>
         </md-sidenav>
-         <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
           <md-toolbar class="md-theme-indigo">
             <h1 class="md-toolbar-tools">Sidenav Right</h1>
           </md-toolbar>
@@ -50,58 +49,109 @@
           </md-content>
         </md-sidenav>
 
-        <md-content  >
-
-          <div layout="column" layout-fill>
-            <md-toolbar>
-              <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()" hide-gt-md="">
-                  <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg"></md-icon>
-                </md-button>
-                <h2>
-                  <span>Attas</span>
-                </h2>
-                <span flex></span>
-                <md-button class="md-icon-button" aria-label="notifications">
-                  <md-tooltip>
-                    Check Notifications
-                  </md-tooltip>
-                  <md-icon md-svg-src="bower_components/material-design-icons/communication/svg/design/ic_messenger_outline_24px.svg"></md-icon>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="My Stuff" ng-click="toggleRight()">
-                <md-tooltip>
-                  My Stuff
-                </md-tooltip>
-                  <md-icon md-svg-src="bower_components/material-design-icons/action/svg/design/ic_account_circle_24px.svg"></md-icon>
-                </md-button>
-              </div>
-            </md-toolbar>
-          </div>
-
-          <ui-view></ui-view>
-
-        </md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleLeft()" hide-gt-md="">
+        <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/production/ic_menu_24px.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Attas</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="notifications">
+          <md-tooltip>
+          Check Notifications
+          </md-tooltip>
+          <md-icon md-svg-src="bower_components/material-design-icons/communication/svg/design/ic_messenger_outline_24px.svg"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="My Stuff" ng-click="toggleRight()">
+          <md-tooltip>
+          My Stuff
+          </md-tooltip>
+          <md-icon md-svg-src="bower_components/material-design-icons/action/svg/design/ic_account_circle_24px.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+  </div>
 
 
-    </section>
- </div>
+  <div ng-controller="profileController" flex layout="column">
+    <div layout="row" layout-align="space-between center">
+      <div>
+        Completed: 5 {{}}
+      </div>
+      <div>
+        Joined: 12 {{}}
+      </div>
+    </div>
+    <div class="profile">
+      <div class="bg" ng-style="profileHero"><img ng-src="http://www.gravatar.com/avatar/1000" alt="Description" /></div>
+    </div>
 
+    <div class="slick">
+      <slick infinite='true' speed='300' slides-to-show='3' touch-move='true' slides-to-scroll='1'>
+        <div class="box"><h3>Complete Atta 1</h3></div>
+        <div class="box"><h3>Complete Atta 2</h3></div>
+        <div class="box"><h3>Complete Atta 3</h3></div>
+        <div class="box"><h3>Complete Atta 4</h3></div>
+        <div class="box"><h3>Complete Atta 5</h3></div>
+        <div class="box"><h3>Complete Atta 6</h3></div>
+      </slick>
+    </div>
 
+      <div flex  layout="column">
+        <md-tabs flex style="margin: 0">
+          <md-tab >
+              <md-tab-label>Tab 1</md-tab-label>
+              <md-tab-body>
+                <div ng-controller="incompleteAttaController" layout="column" layout-fill >
+                  <md-content >
+                    <md-list >
+                      <md-list-item ng-repeat="message in messages" class="md-2-line md-whiteframe-z1" layout-margin>
+                        <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+                        <div class="md-list-item-text">
+                          <h3>{{message.what}}</h3>
+                        </div>
+                      </md-list-item>
+                    </md-list>
+                  </md-content>
+                </div>
+              </md-tab-body>
+          </md-tab>
+          <md-tab>
+              <md-tab-label>
+                Tab 2
+              </md-tab-label>
+              <md-tab-body>
+                <div layout="column" layout-fill>
+                  <md-content>
+                    <pre>View for Completed ATTAs <br/>
+                data.selectedIndex = 1;</pre>
+                  </md-content>
+                </div>
+              </md-tab-body>
+          </md-tab>
+        </md-tabs>
+      </div>
 
+    </div>
+    <nav mfb-menu position="br" effect="zoomin" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
+     <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
+    </nav>
+  </div>
 
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-XXXXX-X');
+ga('send', 'pageview');
+</script>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
-    <!-- build:js(.) scripts/oldieshim.js -->
+<!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
@@ -127,12 +177,15 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/profileController.js"></script>
-        <script src="scripts/controllers/inviteController.js"></script>
-        <script src="scripts/controllers/completeController.js"></script>
-        <script src="scripts/controllers/createController.js"></script>
-        <!-- endbuild -->
-</body>
-</html>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/navController.js"></script>
+    <script src="scripts/controllers/profileController.js"></script>
+    <script src="scripts/controllers/inviteController.js"></script>
+    <script src="scripts/controllers/completeController.js"></script>
+    <script src="scripts/controllers/createController.js"></script>
+    <!-- endbuild -->
+  </body>
+  </html>
+
+
