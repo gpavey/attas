@@ -22,6 +22,7 @@ angular
     'ng-mfb'
   ])
 .controller('MainCtrl', function($scope) {
+  $scope.opacityState = 'closed';
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
