@@ -1,10 +1,13 @@
 
-<div ng-controller="profileController" flex layout="column">
+<div ng-controller="profileController" flex layout="column" class="my-content" ng-class="{'fadeOut' : menuState === 'closed'}">
+    <p>
+      menu state: {{menuState}}
+    </p>
   <div layout="row" layout-align="space-between center">
-    <div>
+    <div class="h5">
       Completed: 5 {{}}
     </div>
-    <div>
+    <div class="h5">
       Joined: 12 {{}}
     </div>
   </div>
@@ -23,43 +26,46 @@
     </slick>
   </div>
 
-    <div flex  layout="column">
-      <md-tabs flex style="margin: 0">
-        <md-tab >
-            <md-tab-label>Tab 1</md-tab-label>
-            <md-tab-body>
-              <div ng-controller="incompleteAttaController" layout="column" layout-fill >
-                <md-content >
-                  <md-list >
-                    <md-list-item ng-repeat="message in messages" class="md-2-line md-whiteframe-z1" layout-margin>
-                      <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                      <div class="md-list-item-text">
-                        <h3>{{message.what}}</h3>
-                      </div>
-                    </md-list-item>
-                  </md-list>
-                </md-content>
-              </div>
-            </md-tab-body>
-        </md-tab>
-        <md-tab>
-            <md-tab-label>
-              Tab 2
-            </md-tab-label>
-            <md-tab-body>
-              <div layout="column" layout-fill>
-                <md-content>
-                  <pre>View for Completed ATTAs <br/>
-              data.selectedIndex = 1;</pre>
-                </md-content>
-              </div>
-            </md-tab-body>
-        </md-tab>
-      </md-tabs>
-    </div>
-
+  <div flex layout="column">
+    <md-tabs flex style="margin: 0">
+      <md-tab >
+          <md-tab-label>Tab 1</md-tab-label>
+          <md-tab-body>
+            <div ng-controller="incompleteAttaController" layout="column" layout-fill >
+              <md-content >
+                <md-list >
+                  <md-list-item ng-repeat="message in messages" class="md-2-line md-whiteframe-z1" layout-margin>
+                    <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+                    <div class="md-list-item-text">
+                      <h3>{{message.what}}</h3>
+                    </div>
+                  </md-list-item>
+                </md-list>
+              </md-content>
+            </div>
+          </md-tab-body>
+      </md-tab>
+      <md-tab>
+          <md-tab-label>
+            Tab 2
+          </md-tab-label>
+          <md-tab-body>
+            <div layout="column" layout-fill>
+              <md-content>
+                <pre>View for Completed ATTAs <br/>
+            data.selectedIndex = 1;</pre>
+              </md-content>
+            </div>
+          </md-tab-body>
+      </md-tab>
+    </md-tabs>
   </div>
-  <nav mfb-menu position="br" effect="zoomin" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
-   <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
-  </nav>
+
+  <div ng-controller="mfbController">
+      <nav mfb-menu position="br" effect="slidein" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click" menu-state="menuState" >{{menuState}}
+       <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
+      </nav>
+  </div>
+</div>
+
 

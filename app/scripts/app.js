@@ -21,31 +21,30 @@ angular
     'slick',
     'ng-mfb'
   ])
+.controller('MainCtrl', function($scope) {
+})
 
-
-
-
-  .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
-    $stateProvider
-       .state('invite', {
-         url         : '/invite',
-         templateUrl : '../views/invite.html',
-         controller  : 'inviteController'
-       })
-       .state('complete', {
-         url         : '/complete',
-         templateUrl : '../views/complete.html',
-         controller  : 'completeController'
-       })
-       .state('create', {
-         url         : '/create',
-         templateUrl : '../views/create.html',
-         controller  : 'createController'
-       })
-      .state('profile', {
-        url           : '/profile',
-        templateUrl   : '../views/profile.html',
-        controller    : 'profileController'
-      });
-  });
+.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+  $stateProvider
+     .state('invite', {
+       url         : '/invite',
+       templateUrl : '../views/invite.html',
+       controller  : 'inviteController'
+     })
+     .state('complete', {
+       url         : '/complete',
+       templateUrl : '../views/complete.html',
+       controller  : 'completeController'
+     })
+     .state('create', {
+       url         : '/create',
+       templateUrl : '../views/create.html',
+       controller  : 'createController'
+     })
+    .state('profile', {
+      url           : '/profile',
+      templateUrl   : '../views/profile.html',
+      controller    : 'profileController'
+    });
+});

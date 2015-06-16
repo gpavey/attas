@@ -9,6 +9,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css" />
   <link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css" />
@@ -20,34 +21,34 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="attasApp" layout="column">
+<body ng-app="attasApp" layout="column" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
       <!-- Add your site or application content here -->
   <div ng-controller="NavCtrl" layout="column">
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-          <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Sidenav Left</h1>
-          </md-toolbar>
-          <md-content ng-controller="LeftCtrl" layout-padding>
-            <md-button ng-click="close()" class="md-primary" hide-gt-md="">
-              Close Sidenav Left
-            </md-button>
-          </md-content>
-        </md-sidenav>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <md-content ng-controller="LeftCtrl" layout-padding>
+        <md-button ng-click="close()" class="md-primary" hide-gt-md="">
+          Close Sidenav Left
+        </md-button>
+      </md-content>
+    </md-sidenav>
 
-        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
-          <md-toolbar class="md-theme-indigo">
-            <h1 class="md-toolbar-tools">Sidenav Right</h1>
-          </md-toolbar>
-          <md-content ng-controller="RightCtrl" layout-padding>
-            <md-button ng-click="close()" class="md-primary">
-              Close Sidenav Right
-            </md-button>
-          </md-content>
-        </md-sidenav>
+    <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      </md-toolbar>
+      <md-content ng-controller="RightCtrl" layout-padding>
+        <md-button ng-click="close()" class="md-primary">
+          Close Sidenav Right
+        </md-button>
+      </md-content>
+    </md-sidenav>
 
     <md-toolbar>
       <div class="md-toolbar-tools">
@@ -73,72 +74,11 @@
       </div>
     </md-toolbar>
   </div>
+  <div ui-view flex layout="column" >
 
-
-  <div ng-controller="profileController" flex layout="column">
-    <div layout="row" layout-align="space-between center">
-      <div>
-        Completed: 5 {{}}
-      </div>
-      <div>
-        Joined: 12 {{}}
-      </div>
-    </div>
-    <div class="profile">
-      <div class="bg" ng-style="profileHero"><img ng-src="http://www.gravatar.com/avatar/1000" alt="Description" /></div>
-    </div>
-
-    <div class="slick">
-      <slick infinite='true' speed='300' slides-to-show='3' touch-move='true' slides-to-scroll='1'>
-        <div class="box"><h3>Complete Atta 1</h3></div>
-        <div class="box"><h3>Complete Atta 2</h3></div>
-        <div class="box"><h3>Complete Atta 3</h3></div>
-        <div class="box"><h3>Complete Atta 4</h3></div>
-        <div class="box"><h3>Complete Atta 5</h3></div>
-        <div class="box"><h3>Complete Atta 6</h3></div>
-      </slick>
-    </div>
-
-      <div flex  layout="column">
-        <md-tabs flex style="margin: 0">
-          <md-tab >
-              <md-tab-label>Tab 1</md-tab-label>
-              <md-tab-body>
-                <div ng-controller="incompleteAttaController" layout="column" layout-fill >
-                  <md-content >
-                    <md-list >
-                      <md-list-item ng-repeat="message in messages" class="md-2-line md-whiteframe-z1" layout-margin>
-                        <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                        <div class="md-list-item-text">
-                          <h3>{{message.what}}</h3>
-                        </div>
-                      </md-list-item>
-                    </md-list>
-                  </md-content>
-                </div>
-              </md-tab-body>
-          </md-tab>
-          <md-tab>
-              <md-tab-label>
-                Tab 2
-              </md-tab-label>
-              <md-tab-body>
-                <div layout="column" layout-fill>
-                  <md-content>
-                    <pre>View for Completed ATTAs <br/>
-                data.selectedIndex = 1;</pre>
-                  </md-content>
-                </div>
-              </md-tab-body>
-          </md-tab>
-        </md-tabs>
-      </div>
-
-    </div>
-    <nav mfb-menu position="br" effect="zoomin" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
-     <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
-    </nav>
   </div>
+
+
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
