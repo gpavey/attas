@@ -4,19 +4,6 @@
 angular.module('attasApp')
 
   .controller('NavCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
-      $scope.buttons = [{
-        label: 'invite a friend',
-        icon: 'ion-paper-airplane',
-        state: 'invite'
-      },{
-        label: 'Complete an Atta',
-        icon: 'ion-checkmark',
-        state: 'complete'
-      },{
-        label: 'Create an Atta',
-        icon: 'ion-edit',
-        state: 'create'
-      }];
 
     function buildToggler(navID) {
       var debounceFn =  $mdUtil.debounce(function(){

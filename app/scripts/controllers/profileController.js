@@ -3,18 +3,34 @@
 
 /**
  * @ngdoc function
- * @name attasApp.controller:AboutCtrl
+ * @name attasApp.controller:ProfilePageController
  * @description
- * # AboutCtrl
+ * # ProfilePageController
  * Controller of the attasApp
  */
 angular.module('attasApp')
   .controller('profileController', function ($scope) {
-        $scope.profileHero = {
-        background: 'url(images/background.jpg)'
-    };
+  $scope.menuState = 'closed';
+      $scope.buttons = [{
+      label: 'invite a friend',
+      icon: 'ion-paper-airplane',
+      state: 'invite'
+    },{
+      label: 'Complete an Atta',
+      icon: 'ion-checkmark',
+      state: 'complete'
+    },{
+      label: 'Create an Atta',
+      icon: 'ion-edit',
+      state: 'create'
+  }];
   })
 
+  .controller('profileBackgroundController',function($scope){
+      $scope.profileHero = {
+      background: 'url(images/background.jpg)'
+    };
+  })
   .controller('tabsController', function($scope){
     $scope.data = {
       selectedIndex: 0
@@ -75,6 +91,22 @@ angular.module('attasApp')
         what: 'Volunteer at pet shelter',
       }
     ];
+  })
+
+  .controller('mfbController',function($scope){
+    $scope.buttons = [{
+        label: 'invite a friend',
+        icon: 'ion-paper-airplane',
+        state: 'invite'
+      },{
+        label: 'Complete an Atta',
+        icon: 'ion-checkmark',
+        state: 'complete'
+      },{
+        label: 'Create an Atta',
+        icon: 'ion-edit',
+        state: 'create'
+    }];
   });
 
 

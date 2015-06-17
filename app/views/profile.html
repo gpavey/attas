@@ -1,29 +1,33 @@
 
-<div ng-controller="profileController" flex layout="column">
-  <div layout="row" layout-align="space-between center">
-    <div>
-      Completed: 5 {{}}
+<div ng-controller="profileController" flex layout="column" >
+  <div class="my-content" ng-class="{'fadeOut' : menuState === 'closed'}" flex layout="column" >
+    <p>
+      menu state: {{menuState}}
+    </p>
+    <div layout="row" layout-align="space-between center">
+      <div class="h5">
+        Completed: 5 {{}}
+      </div>
+      <div class="h5">
+        Joined: 12 {{}}
+      </div>
     </div>
-    <div>
-      Joined: 12 {{}}
+    <div class="profile" ng-controller="profileBackgroundController">
+      <div class="bg" ng-style="profileHero"><img ng-src="http://www.gravatar.com/avatar/1000" alt="Description" /></div>
     </div>
-  </div>
-  <div class="profile">
-    <div class="bg" ng-style="profileHero"><img ng-src="http://www.gravatar.com/avatar/1000" alt="Description" /></div>
-  </div>
 
-  <div class="slick">
-    <slick infinite='true' speed='300' slides-to-show='3' touch-move='true' slides-to-scroll='1'>
-      <div class="box"><h3>Complete Atta 1</h3></div>
-      <div class="box"><h3>Complete Atta 2</h3></div>
-      <div class="box"><h3>Complete Atta 3</h3></div>
-      <div class="box"><h3>Complete Atta 4</h3></div>
-      <div class="box"><h3>Complete Atta 5</h3></div>
-      <div class="box"><h3>Complete Atta 6</h3></div>
-    </slick>
-  </div>
+    <div class="slick">
+      <slick infinite='true' speed='300' slides-to-show='3' touch-move='true' slides-to-scroll='1'>
+        <div class="box"><h3>Complete Atta 1</h3></div>
+        <div class="box"><h3>Complete Atta 2</h3></div>
+        <div class="box"><h3>Complete Atta 3</h3></div>
+        <div class="box"><h3>Complete Atta 4</h3></div>
+        <div class="box"><h3>Complete Atta 5</h3></div>
+        <div class="box"><h3>Complete Atta 6</h3></div>
+      </slick>
+    </div>
 
-    <div flex  layout="column">
+    <div flex layout="column">
       <md-tabs flex style="margin: 0">
         <md-tab >
             <md-tab-label>Tab 1</md-tab-label>
@@ -59,7 +63,10 @@
     </div>
 
   </div>
-  <nav mfb-menu position="br" effect="zoomin" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click">
-   <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
+
+  <nav mfb-menu position="br" effect="slidein" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click" menu-state="menuState" >{{menuState}}
+    <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
   </nav>
+</div>
+
 
