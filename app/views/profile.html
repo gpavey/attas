@@ -1,14 +1,11 @@
 
 <div ng-controller="profileController" flex layout="column" >
   <div class="my-content" ng-class="{'fadeOut' : menuState === 'closed'}" flex layout="column" >
-    <p>
-      menu state: {{menuState}}
-    </p>
     <div layout="row" layout-align="space-between center">
-      <div class="h5">
+      <div class="h5 pLeft5">
         Completed: 5 {{}}
       </div>
-      <div class="h5">
+      <div class="h5 pRight5">
         Joined: 12 {{}}
       </div>
     </div>
@@ -64,7 +61,7 @@
 
   </div>
 
-  <nav mfb-menu position="br" effect="slidein" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click" menu-state="menuState" >{{menuState}}
+  <nav mfb-menu position="br" effect="slidein" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click" menu-state="menuState" >
     <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
   </nav>
 </div>
