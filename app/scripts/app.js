@@ -57,7 +57,7 @@ angular
      .state('create', {
        url          : '/create',
        templateUrl  : '../views/create.html',
-       controller   : 'createController'
+       controller   : 'createCtrl'
      })
     .state('edit_profile', {
       url           : '/edit_profile',

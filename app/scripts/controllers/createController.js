@@ -9,5 +9,20 @@
  * Controller of the attasApp
  */
 angular.module('attasApp')
-  .controller('createController', function () {
+
+  .controller('createCtrl', function ($scope) {
+    $scope.menuState = 'closed';
+    $scope.buttons = [{
+      label: 'invite a friend',
+      icon: 'ion-paper-airplane',
+      state: 'invite'
+    },{
+      label: 'Complete an Atta',
+      icon: 'ion-checkmark',
+      state: 'complete'
+    },{
+      label: 'Create an Atta',
+      icon: 'ion-edit',
+      state: 'create'
+    }];
   });

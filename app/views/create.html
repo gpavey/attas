@@ -1,0 +1,46 @@
+<div ng-controller="createCtrl" flex layout="column" >
+  <div class="my-content" ng-class="{'fadeOut' : menuState === 'closed'}" flex layout="column" >
+    <div class="h1 text-center">New Atta</div>
+    <input type="text">
+    <md-content layout-padding="">
+      <form name="newAttaForm">
+        <md-input-container md-no-float="">
+          <input ng-model="action.challenge_desc" placeholder="Description">
+        </md-input-container>
+        <div class="h3">Others can see that I'm doing this?</div>
+          <md-radio-group ng-model="action.viewable">
+          <md-radio-button value="Y" class="md-primary">Yes</md-radio-button>
+          <md-radio-button value="N">No</md-radio-button>
+        </md-radio-group>
+        <md-divider></md-divider>
+        <md-input-container flex="">
+          <label>Expiration Date</label>
+          <input type="date" ng-model="action.expire_dt">
+        </md-input-container>
+
+        <div class="h3">Add up to 3 tags</div>
+        <md-input-container md-no-float="">
+          <input ng-model="action.tags[0]" placeholder="Tag">
+        </md-input-container>
+        <md-input-container md-no-float="">
+          <input ng-model="action.tags[1]" placeholder="Tag">
+        </md-input-container>
+        <md-input-container md-no-float="">
+          <input ng-model="action.tags[2]" placeholder="Tag">
+        </md-input-container>
+
+        <div class="h3">Notify me if someone joins this ATTA</div>
+        <md-input-container >
+          <md-checkbox ng-model="action.hitMe" aria-label="Checkbox 1">
+          Email Me!
+        </md-checkbox>
+        </md-input-container>
+
+        <md-button class="md-raised md-primary">Submit</md-button>
+      </form>
+    </md-content>
+  </div>
+  <nav mfb-menu position="br" effect="slidein" active-icon="ion-edit" resting-icon="ion-plus-round" toggling-method="click" menu-state="menuState" >
+    <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons" ui-sref="{{button.state}}"></a>
+  </nav>
+</div>
